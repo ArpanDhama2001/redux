@@ -6,18 +6,17 @@
 
 ## Configure the store
 
-```
-import { configureStore } from '@reduxjs/toolkit'
+```javascript
+import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
   reducer: {},
-})
-
+});
 ```
 
 ## Connect store to app
 
-```
+```javascript
 
   import { store } from "./redux/store"
   import { Provider } from 'react-redux'
@@ -29,7 +28,7 @@ export const store = configureStore({
 
 ## Create a Slice, export Slice, reducer and actions
 
-```
+```javascript
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -56,8 +55,6 @@ export const todoSlice = createSlice({
 export const { addTodo, removeTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;
-
-
 ```
 
 ## Add Slice to Store
@@ -72,11 +69,9 @@ export default todoSlice.reducer;
 
 ## Use State and Actions in Components
 
-```
-import { useSelector, useDispatch } from 'react-redux'
+```javascript
+import { useSelector, useDispatch } from "react-redux";
 import { removeTodo } from "../features/todo/todoSlice";
-  const todos = useSelector((state) => state.todo.todos);
-  const dispatch = useDispatch();
-
-
+const todos = useSelector((state) => state.todo.todos);
+const dispatch = useDispatch();
 ```
